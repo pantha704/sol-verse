@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useWallet } from "@solana/wallet-adapter-react";
+import { useWallet, useConnection } from "@solana/wallet-adapter-react";
 import {
   ConnectionProvider,
   WalletProvider,
@@ -13,13 +13,17 @@ import {
 // Default styles that can be overridden by your app
 import "@solana/wallet-adapter-react-ui/styles.css";
 
-function App() {
+function WalletAdapter() {
   // const [rpcUrl, setRpcUrl] = useState(clusterApiUrl("devnet"));
+
+  const connection = useConnection();
   const wallet = useWallet();
   const navigate = useNavigate();
+
   return (
     <div className="flex flex-col gap-2 items-center justify-center">
       <div className="text-2xl font-bold text-center mb-4">Wallet Adapter</div>
+      <div className="text-center mb-4">{`Currently supported on Devnet`}</div>
       <div className="flex flex-col w-auto justify-center pb-4">
         <WalletMultiButton />
         {/* <WalletDisconnectButton /> */}
@@ -50,4 +54,4 @@ function App() {
   );
 }
 
-export default App;
+export default WalletAdapter;

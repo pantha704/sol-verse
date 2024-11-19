@@ -19,7 +19,6 @@ import { clusterApiUrl } from "@solana/web3.js";
 
 function App() {
   const [rpcUrl, setRpcUrl] = useState("devnet");
-
   return (
     <BrowserRouter>
       <ConnectionProvider endpoint={clusterApiUrl(rpcUrl)}>
@@ -36,22 +35,8 @@ function App() {
                       </Suspense>
                     }
                   />
-                  <Route
-                    path="/airdrop"
-                    element={
-                      <Suspense fallback={<div>Loading...</div>}>
-                        <Airdrop />
-                      </Suspense>
-                    }
-                  />
-                  <Route
-                    path="/send-tokens"
-                    element={
-                      <Suspense fallback={<div>Loading...</div>}>
-                        <SendTokens />
-                      </Suspense>
-                    }
-                  />
+                  <Route path="/airdrop" element={<Airdrop />} />
+                  <Route path="/send-tokens" element={<SendTokens />} />
                 </Routes>
               </div>
             </div>

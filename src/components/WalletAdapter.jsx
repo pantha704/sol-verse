@@ -23,7 +23,9 @@ function WalletAdapter() {
   return (
     <div className="flex flex-col gap-2 items-center justify-center">
       <div className="text-2xl font-bold text-center mb-4">Wallet Adapter</div>
-      <div className="text-center mb-4">{`Currently supported on Devnet`}</div>
+      <div className="text-center mb-4 font-light">
+        Currently supported on <span className="font-bold">Devnet</span>
+      </div>
       <div className="flex flex-col w-auto justify-center pb-4">
         <WalletMultiButton />
         {/* <WalletDisconnectButton /> */}

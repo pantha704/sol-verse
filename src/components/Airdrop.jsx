@@ -19,11 +19,10 @@ const Airdrop = () => {
         wallet.publicKey,
         balance * LAMPORTS_PER_SOL
       );
+      alert(`Airdropped ${amount} SOL successfully`);
     } catch (err) {
       alert(err);
     }
-
-    alert(`Airdropped ${amount} SOL successfully`);
   }
 
   async function getBalance() {

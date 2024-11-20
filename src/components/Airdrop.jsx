@@ -9,7 +9,7 @@ window.Buffer = Buffer;
 const Airdrop = () => {
   const wallet = useWallet();
   const { connection } = useConnection();
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState(2.5);
   const [balance, setBalance] = useState(0);
   const navigate = useNavigate();
 
@@ -21,7 +21,7 @@ const Airdrop = () => {
       );
       alert(`Airdropped ${amount} SOL successfully`);
     } catch (err) {
-      alert(err);
+      alert(err.message);
     }
   }
 
@@ -53,7 +53,7 @@ const Airdrop = () => {
         value={amount}
       />
       <p className="text-sm text-gray-500">
-        (Try airdropping not more than 2 SOL, else it will fail)
+        (Try airdropping not more than 5 SOL, else it will fail)
       </p>
       <button
         className="text-white m-2 rounded-md"

@@ -8,6 +8,7 @@ import {
 } from "@solana/web3.js";
 import { useState, useCallback, useEffect } from "react";
 import { Buffer } from "buffer";
+import { error } from "console";
 
 // Ensure Buffer is available in the browser environment
 if (typeof window !== "undefined") {
@@ -52,8 +53,7 @@ export const SendTokens = () => {
 
       alert(txHash ? "Transaction successful" : "Transaction failed");
     } catch (error) {
-      console.error("Transaction error:", error);
-      alert("Transaction failed");
+      alert("Transaction failed: " + error.message);
     }
   }, [publicKey, sendTransaction, connection, recipient, amount]);
 

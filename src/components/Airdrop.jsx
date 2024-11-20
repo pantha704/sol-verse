@@ -53,7 +53,7 @@ const Airdrop = () => {
         value={amount}
       />
       <p className="text-sm text-gray-500">
-        (Try airdropping not more than 5 SOL, else it will fail)
+        (Try airdropping not more than 5 SOL, else it might fail)
       </p>
       <button
         className="text-white m-2 rounded-md"

@@ -17,7 +17,7 @@ const Airdrop = () => {
     try {
       await connection.requestAirdrop(
         wallet.publicKey,
-        balance * LAMPORTS_PER_SOL
+        amount * LAMPORTS_PER_SOL
       );
       alert(`Airdropped ${amount} SOL successfully`);
     } catch (err) {

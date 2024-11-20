@@ -12,9 +12,11 @@ import {
 } from "@solana/wallet-adapter-react-ui";
 // Default styles that can be overridden by your app
 import "@solana/wallet-adapter-react-ui/styles.css";
+import { useRecoilState } from "recoil";
+import { rpcStringState } from "../lib/atoms";
 
 function WalletAdapter() {
-  // const [rpcUrl, setRpcUrl] = useState(clusterApiUrl("devnet"));
+  const [rpcString, setRpcString] = useRecoilState(rpcStringState);
 
   const connection = useConnection();
   const wallet = useWallet();
@@ -23,8 +25,17 @@ function WalletAdapter() {
   return (
     <div className="flex flex-col gap-2 items-center justify-center">
       <div className="text-2xl font-bold text-center mb-4">Wallet Adapter</div>
-      <div className="text-center mb-4 font-light">
-        Currently supported on <span className="font-bold">Devnet</span>
+      <div className="text-center mb-4 font-semibold">
+        ON{" "}
+        <select
+          className="m-2 font-bold text-center p-1 rounded-lg"
+          onChange={(e) => setRpcString(e.target.value)}
+          value={rpcString}
+        >
+          <option value="devnet">Devnet</option>
+          <option value="mainnet-beta">Mainnet-Beta</option>
+          <option value="testnet">Testnet</option>
+        </select>
       </div>
       <div className="flex flex-col w-auto justify-center pb-4">
         <WalletMultiButton />

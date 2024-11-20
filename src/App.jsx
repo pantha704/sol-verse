@@ -1,5 +1,6 @@
-import React, { useState, Suspense } from "react";
+import React, { Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useRecoilValue } from "recoil";
 import {
   ConnectionProvider,
   WalletProvider,
@@ -16,12 +17,14 @@ import Airdrop from "./components/Airdrop";
 import { SendTokens } from "./components/SendTokens";
 import WalletAdapter from "./components/WalletAdapter";
 import { clusterApiUrl } from "@solana/web3.js";
+import { rpcStringState } from "./lib/atoms";
 
 function App() {
-  const [rpcUrl, setRpcUrl] = useState("devnet");
+  const rpcString = useRecoilValue(rpcStringState);
+
   return (
     <BrowserRouter>
-      <ConnectionProvider endpoint={clusterApiUrl(rpcUrl)}>
+      <ConnectionProvider endpoint={clusterApiUrl(rpcString)}>
         <WalletProvider wallets={[]} autoConnect>
           <WalletModalProvider>
             <div className="flex flex-col gap-2 items-center justify-center">

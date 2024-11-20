@@ -21,10 +21,9 @@ const Airdrop = () => {
       );
     } catch (err) {
       alert(err);
-      error = err;
     }
 
-    if (!error) alert(`Airdropped ${amount} SOL successfully`);
+    alert(`Airdropped ${amount} SOL successfully`);
   }
 
   async function getBalance() {
@@ -54,7 +53,11 @@ const Airdrop = () => {
         onChange={(e) => setAmount(e.target.value)}
         value={amount}
       />
+      <p className="text-sm text-gray-500">
+        (Try airdropping not more than 2 SOL, else it will fail)
+      </p>
       <button
+        className="text-white m-2 rounded-md"
         onClick={() =>
           amount > 0
             ? sendAirdropToUser()

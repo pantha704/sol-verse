@@ -90,7 +90,7 @@ const Swap = () => {
   return (
     <div className="flex flex-col items-center justify-center p-4">
       <h1 className="text-2xl font-bold mb-4">Swap (Coming Soon)</h1>
-      <div className="w-full max-w-md shadow-md rounded-lg p-6">
+      <div className="w-full max-w-md rounded-lg p-6">
         <div className="mb-3">
           <label
             className="block text-white text-sm font-bold mb-1"

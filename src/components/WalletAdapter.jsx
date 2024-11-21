@@ -44,7 +44,7 @@ function WalletAdapter() {
       {wallet.connected ? (
         <div className="grid grid-cols-2 gap-4 mt-2 w-auto justify-center">
           <button
-            className="bg-blue-500 hover:bg-blue-700 hover:text-gray-300 text-white p-2 rounded-md"
+            className="bg-blue-500 w-full hover:bg-blue-700 hover:text-gray-300 text-white rounded-md"
             onClick={() => {
               navigate("/airdrop");
             }}
@@ -52,7 +52,7 @@ function WalletAdapter() {
             Airdrop
           </button>
           <button
-            className="bg-blue-500 hover:bg-blue-700 hover:text-gray-300 text-white p-2 rounded-md"
+            className="bg-blue-500 w-full hover:bg-blue-700 hover:text-gray-300 text-white rounded-md"
             onClick={() => {
               navigate("/send-tokens");
             }}
@@ -60,7 +60,7 @@ function WalletAdapter() {
             Transfer
           </button>
           <button
-            className="bg-blue-500 hover:bg-blue-700 hover:text-gray-300 text-white p-2 rounded-md"
+            className="bg-blue-500 w-full hover:bg-blue-700 hover:text-gray-300 text-white rounded-md"
             onClick={() => {
               navigate("/swap");
             }}

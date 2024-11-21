@@ -45,6 +45,7 @@ const Airdrop = () => {
 
   return (
     <div className="flex flex-col gap-2 justify-center items-center">
+      <div className="text-2xl font-bold text-center mb-4">Airdrop</div>
       <input
         className="border-2 rounded-md p-2 border-black"
         type="number"

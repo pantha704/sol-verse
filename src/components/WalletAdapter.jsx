@@ -57,7 +57,7 @@ function WalletAdapter() {
               navigate("/send-tokens");
             }}
           >
-            Send Tokens
+            Transfer
           </button>
           <button
             className="bg-blue-500 hover:bg-blue-700 hover:text-gray-300 text-white p-2 rounded-md"

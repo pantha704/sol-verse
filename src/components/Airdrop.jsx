@@ -9,7 +9,7 @@ window.Buffer = Buffer;
 const Airdrop = () => {
   const wallet = useWallet();
   const { connection } = useConnection();
-  const [amount, setAmount] = useState(2.5);
+  const [amount, setAmount] = useState();
   const [balance, setBalance] = useState(0);
   const navigate = useNavigate();
 

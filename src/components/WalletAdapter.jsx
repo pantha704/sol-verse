@@ -42,9 +42,9 @@ function WalletAdapter() {
         {/* <WalletDisconnectButton /> */}
       </div>
       {wallet.connected ? (
-        <div className="flex flex-col w-auto gap-2 justify-center">
+        <div className="grid grid-cols-2 gap-4 mt-2 w-auto justify-center">
           <button
-            className="bg-blue-500 text-white p-2 rounded-md"
+            className="bg-blue-500 hover:bg-blue-700 hover:text-gray-300 text-white p-2 rounded-md"
             onClick={() => {
               navigate("/airdrop");
             }}
@@ -52,12 +52,20 @@ function WalletAdapter() {
             Airdrop
           </button>
           <button
-            className="bg-blue-500 text-white p-2 rounded-md"
+            className="bg-blue-500 hover:bg-blue-700 hover:text-gray-300 text-white p-2 rounded-md"
             onClick={() => {
               navigate("/send-tokens");
             }}
           >
             Send Tokens
+          </button>
+          <button
+            className="bg-blue-500 hover:bg-blue-700 hover:text-gray-300 text-white p-2 rounded-md"
+            onClick={() => {
+              navigate("/swap");
+            }}
+          >
+            Swap
           </button>
         </div>
       ) : (

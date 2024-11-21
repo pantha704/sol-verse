@@ -18,7 +18,7 @@ import { SendTokens } from "./components/SendTokens";
 import WalletAdapter from "./components/WalletAdapter";
 import { clusterApiUrl } from "@solana/web3.js";
 import { rpcStringState } from "./lib/atoms";
-
+import Swap from "./components/Swap";
 function App() {
   const rpcString = useRecoilValue(rpcStringState);
 
@@ -38,8 +38,30 @@ function App() {
                       </Suspense>
                     }
                   />
-                  <Route path="/airdrop" element={<Airdrop />} />
-                  <Route path="/send-tokens" element={<SendTokens />} />
+                  <Route
+                    path="/airdrop"
+                    element={
+                      <Suspense fallback={<div>Loading...</div>}>
+                        <Airdrop />
+                      </Suspense>
+                    }
+                  />
+                  <Route
+                    path="/send-tokens"
+                    element={
+                      <Suspense fallback={<div>Loading...</div>}>
+                        <SendTokens />
+                      </Suspense>
+                    }
+                  />
+                  <Route
+                    path="/swap"
+                    element={
+                      <Suspense fallback={<div>Loading...</div>}>
+                        <Swap />
+                      </Suspense>
+                    }
+                  />
                 </Routes>
               </div>
             </div>

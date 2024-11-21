@@ -52,11 +52,9 @@ const Airdrop = () => {
         onChange={(e) => setAmount(e.target.value)}
         value={amount}
       />
-      <p className="text-sm text-gray-500">
-        (Try airdropping not more than 5 SOL, else it might fail)
-      </p>
+      <p className="text-sm text-gray-500">Max 5 SOL at once</p>
       <button
-        className="text-white m-2 rounded-md"
+        className="text-white hover:text-gray-300 m-2 rounded-md"
         onClick={() =>
           amount > 0
             ? sendAirdropToUser()
@@ -66,10 +64,12 @@ const Airdrop = () => {
         Send
       </button>
       <br />
-      <button onClick={getBalance}>Fetch Balance</button>
+      <button className="text-white hover:text-gray-300" onClick={getBalance}>
+        Fetch Balance
+      </button>
       {balance ? `You have ${balance} SOL in your wallet` : ""}
       <button
-        className="bg-purple-500 text-white mt-6 rounded-md"
+        className="bg-purple-500 hover:bg-purple-700 text-white hover:text-gray-300 mt-6 rounded-md"
         onClick={() => navigate("/")}
       >
         Home

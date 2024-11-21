@@ -80,6 +80,7 @@ export const SendTokens = () => {
         onChange={(e) => setAmount(Number(e.target.value))}
       />
       <button
+        className="text-white hover:text-gray-300 mt-4 rounded-md"
         onClick={() =>
           amount > 0 ? sendTokens() : alert("Amount must be greater than 0")
         }
@@ -88,14 +89,14 @@ export const SendTokens = () => {
         Send
       </button>
       <button
-        className="text-white mt-4 rounded-md"
+        className="text-white hover:text-gray-300 mt-4 rounded-md"
         onClick={() => getBalance()}
       >
         Fetch Balance
       </button>
       {balance ? `You have ${balance} SOL in your wallet` : ""}
       <button
-        className="bg-purple-500 text-white mt-6 rounded-md"
+        className="bg-purple-500 hover:bg-purple-700 hover:text-gray-300 mt-6 rounded-md"
         onClick={() => navigate("/")}
       >
         Home

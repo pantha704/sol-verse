@@ -47,7 +47,7 @@ const Airdrop = () => {
     <div className="flex flex-col gap-2 justify-center items-center">
       <div className="text-2xl font-bold text-center mb-4">Airdrop</div>
       <input
-        className="border-2 rounded-md p-2 border-black"
+        className="border-2 rounded-md p-2 border-black w-auto"
         type="number"
         placeholder="Amount ( in SOL )"
         onChange={(e) => setAmount(e.target.value)}
@@ -65,7 +65,10 @@ const Airdrop = () => {
         Send
       </button>
       <br />
-      <button className="text-white hover:text-gray-300" onClick={getBalance}>
+      <button
+        className="text-white hover:text-gray-300 w-auto"
+        onClick={getBalance}
+      >
         Fetch Balance
       </button>
       {balance ? `You have ${balance} SOL in your wallet` : ""}

@@ -69,19 +69,19 @@ export const SendTokens = () => {
     <div className="flex flex-col gap-2 justify-center items-center">
       <div className="text-2xl font-bold text-center mb-4">Send Tokens</div>
       <input
-        className="border-2 rounded-md p-2 border-black"
+        className="border-2 rounded-md p-2 border-black w-auto"
         type="text"
         placeholder="Recipient Address"
         onChange={(e) => setRecipient(e.target.value)}
       />
       <input
-        className="border-2 rounded-md p-2 border-black"
+        className="border-2 rounded-md p-2 border-black w-auto"
         type="number"
         placeholder="Amount"
         onChange={(e) => setAmount(Number(e.target.value))}
       />
       <button
-        className="text-white hover:text-gray-300 mt-4 rounded-md"
+        className="text-white hover:text-gray-300 mt-4 rounded-md w-auto"
         onClick={() =>
           amount > 0 ? sendTokens() : alert("Amount must be greater than 0")
         }
@@ -90,7 +90,7 @@ export const SendTokens = () => {
         Send
       </button>
       <button
-        className="text-white hover:text-gray-300 mt-4 rounded-md"
+        className="text-white hover:text-gray-300 mt-4 rounded-md w-auto"
         onClick={() => getBalance()}
       >
         Fetch Balance

@@ -1,32 +1,32 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { useWallet, useConnection } from "@solana/wallet-adapter-react";
+import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { useWallet, useConnection } from '@solana/wallet-adapter-react'
 import {
   ConnectionProvider,
   WalletProvider,
-} from "@solana/wallet-adapter-react";
+} from '@solana/wallet-adapter-react'
 import {
   WalletModalProvider,
   WalletDisconnectButton,
   WalletMultiButton,
-} from "@solana/wallet-adapter-react-ui";
+} from '@solana/wallet-adapter-react-ui'
 // Default styles that can be overridden by your app
-import "@solana/wallet-adapter-react-ui/styles.css";
-import { useRecoilState } from "recoil";
-import { rpcStringState } from "../lib/atoms";
+import '@solana/wallet-adapter-react-ui/styles.css'
+import { useRecoilState } from 'recoil'
+import { rpcStringState } from '../lib/atoms'
 
 function WalletAdapter() {
-  const [rpcString, setRpcString] = useRecoilState(rpcStringState);
+  const [rpcString, setRpcString] = useRecoilState(rpcStringState)
 
-  const connection = useConnection();
-  const wallet = useWallet();
-  const navigate = useNavigate();
+  const connection = useConnection()
+  const wallet = useWallet()
+  const navigate = useNavigate()
 
   return (
     <div className="flex flex-col gap-2 items-center justify-center">
       <div className="text-2xl font-bold text-center mb-4">Wallet Adapter</div>
       <div className="text-center mb-4 font-semibold">
-        ON{" "}
+        ON{' '}
         <select
           className="m-2 font-bold text-center p-1 rounded-lg"
           onChange={(e) => setRpcString(e.target.value)}
@@ -46,7 +46,7 @@ function WalletAdapter() {
           <button
             className="bg-blue-500 w-full hover:bg-blue-700 hover:text-gray-300 text-white rounded-md"
             onClick={() => {
-              navigate("/airdrop");
+              navigate('/airdrop')
             }}
           >
             Airdrop
@@ -54,7 +54,7 @@ function WalletAdapter() {
           <button
             className="bg-blue-500 w-full hover:bg-blue-700 hover:text-gray-300 text-white rounded-md"
             onClick={() => {
-              navigate("/send-tokens");
+              navigate('/transfer')
             }}
           >
             Transfer
@@ -62,7 +62,7 @@ function WalletAdapter() {
           <button
             className="bg-blue-500 w-full hover:bg-blue-700 hover:text-gray-300 text-white rounded-md"
             onClick={() => {
-              navigate("/swap");
+              navigate('/swap')
             }}
           >
             Swap
@@ -72,7 +72,7 @@ function WalletAdapter() {
         <div>Please connect your wallet first</div>
       )}
     </div>
-  );
+  )
 }
 
-export default WalletAdapter;
+export default WalletAdapter

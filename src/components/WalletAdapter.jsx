@@ -27,7 +27,7 @@ function WalletAdapter() {
       <div className="text-2xl font-bold text-center mb-4">
         <div className="flex items-center justify-center">
           <img
-            src="../../public/assets/solana-sol-icon.svg"
+            src="/assets/solana-sol-icon.svg"
             alt="S"
             className="h-8 w-auto mr-2"
             width={20}

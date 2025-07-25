@@ -39,7 +39,7 @@ const Swap = () => {
         ? "Gh9ZwEmdLJ8Dsc3SraphAwBJKjrGZxBpKd9gZ3u7EFEc"
         : "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v", // USDC mint address
     outputSymbol: "USDC",
-    amount: 0,
+    amount: 1,
     slippageBps: 50, // Default slippage of 0.5%
   });
   const [quoteData, setQuoteData] = useState(null);

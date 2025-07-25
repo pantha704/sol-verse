@@ -28,7 +28,7 @@ function WalletAdapter() {
         <div className="flex items-center justify-center">
           <img
             src="../../public/assets/solana-sol-icon.svg"
-            alt="Solverse Logo"
+            alt="S"
             className="h-8 w-auto mr-2"
             width={20}
             height={20}

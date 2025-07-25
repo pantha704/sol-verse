@@ -14,7 +14,7 @@ const Swap = () => {
     try {
       const url = `https://quote-api.jup.ag/v6/quote?inputMint=${inputMint}&outputMint=${outputMint}&amount=${amount}&slippageBps=${slippageBps}${
         cluster !== "mainnet-beta" ? "&cluster=" + cluster : ""
-      }`;
+      }&wrapUnwrapOnly=true`;
       console.log("Fetching quote from:", url);
       const response = await axios.get(url);
       return response.data;

@@ -36,7 +36,7 @@ const Swap = () => {
     inputSymbol: "SOL",
     outputMint:
       cluster !== "mainnet-beta"
-        ? "Gh9ZwEmdLJ8Dsc3SraphAwBJKjrGZxBpKd9gZ3u7EFEc"
+        ? "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263"
         : "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v", // USDC mint address
     outputSymbol: "USDC",
     amount: 1,

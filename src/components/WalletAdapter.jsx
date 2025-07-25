@@ -24,7 +24,14 @@ function WalletAdapter() {
 
   return (
     <div className="flex flex-col gap-2 items-center justify-center">
-      <div className="text-2xl font-bold text-center mb-4">Wallet Adapter</div>
+      <div className="text-2xl font-bold text-center mb-4">
+        <div className="flex items-center justify-center">
+        <img src="/public/assets/solana-sol-icon.svg" alt="Solverse Logo" 
+          className="h-8 w-auto mr-2"
+          width={20}
+          height={20}/><span className='text-3xl'>olverse</span>
+        </div>
+      </div>
       <div className="text-center mb-4 font-semibold">
         ON{' '}
         <select

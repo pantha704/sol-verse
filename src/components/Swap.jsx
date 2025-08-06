@@ -39,7 +39,7 @@ const Swap = () => {
       cluster !== "mainnet-beta"
         ? "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263"
         : "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v", // USDC mint address
-    outputSymbol: "USDC",
+    outputSymbol: cluster !== "mainnet-beta" ? "Bonk" : "USDC", // USDC mint address,
     amount: 1,
     slippageBps: 50, // Default slippage of 0.5%
   });

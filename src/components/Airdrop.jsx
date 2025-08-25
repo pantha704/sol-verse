@@ -46,24 +46,27 @@ const Airdrop = () => {
   return (
     <div className="flex flex-col gap-2 justify-center items-center">
       <div className="text-2xl font-bold text-center mb-4">Airdrop</div>
-      <input
-        className="border-2 rounded-md p-2 border-black w-auto"
-        type="number"
-        placeholder="Amount ( in SOL )"
-        onChange={(e) => setAmount(e.target.value)}
-        value={amount}
-      />
-      <p className="text-sm text-gray-500">Max 5 SOL at once</p>
-      <button
-        className="text-white hover:text-gray-300 m-2 rounded-md"
-        onClick={() =>
-          amount > 0
-            ? sendAirdropToUser()
-            : alert("Amount must be greater than 0")
-        }
-      >
-        Send
-      </button>
+      <form>
+        <input
+          className="border-2 rounded-md p-2 border-black w-auto"
+          type="number"
+          placeholder="Amount ( in SOL )"
+          onChange={(e) => setAmount(e.target.value)}
+          value={amount}
+        />
+        <p className="text-sm text-gray-500">Max 5 SOL at once</p>
+        <button
+          className="text-white hover:text-gray-300 m-2 rounded-md"
+          type="submit"
+          onClick={() =>
+            amount > 0
+              ? sendAirdropToUser()
+              : alert("Amount must be greater than 0")
+          }
+        >
+          Send
+        </button>
+      </form>
       <br />
       <button
         className="text-white hover:text-gray-300 w-auto"

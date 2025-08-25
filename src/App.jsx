@@ -1,22 +1,22 @@
-import React, { Suspense } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { useRecoilValue } from 'recoil'
+import React, { Suspense } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useRecoilValue } from "recoil";
 import {
   ConnectionProvider,
   WalletProvider,
-} from '@solana/wallet-adapter-react'
-import { WalletModalProvider } from '@solana/wallet-adapter-react-ui'
-import './App.css'
+} from "@solana/wallet-adapter-react";
+import { WalletModalProvider } from "@solana/wallet-adapter-react-ui";
+import "./App.css";
 // Default styles that can be overridden by your app
-import '@solana/wallet-adapter-react-ui/styles.css'
-import Airdrop from './components/Airdrop'
-import { Transfer } from './components/Transfer'
-import WalletAdapter from './components/WalletAdapter'
-import { clusterApiUrl } from '@solana/web3.js'
-import { rpcStringState } from './lib/atoms'
-import Swap from './components/Swap'
+import "@solana/wallet-adapter-react-ui/styles.css";
+import Airdrop from "./components/Airdrop";
+import { Transfer } from "./components/Transfer";
+import WalletAdapter from "./components/Home";
+import { clusterApiUrl } from "@solana/web3.js";
+import { rpcStringState } from "./lib/atoms";
+import Swap from "./components/Swap";
 function App() {
-  const rpcString = useRecoilValue(rpcStringState)
+  const rpcString = useRecoilValue(rpcStringState);
 
   return (
     <BrowserRouter>
@@ -65,7 +65,7 @@ function App() {
         </WalletProvider>
       </ConnectionProvider>
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;

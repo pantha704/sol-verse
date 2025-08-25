@@ -7,7 +7,6 @@ import {
 } from "@solana/wallet-adapter-react";
 import { WalletModalProvider } from "@solana/wallet-adapter-react-ui";
 import "./App.css";
-// Default styles that can be overridden by your app
 import "@solana/wallet-adapter-react-ui/styles.css";
 import Airdrop from "./components/Airdrop";
 import { Transfer } from "./components/Transfer";
@@ -15,11 +14,15 @@ import WalletAdapter from "./components/Home";
 import { clusterApiUrl } from "@solana/web3.js";
 import { rpcStringState } from "./lib/atoms";
 import Swap from "./components/Swap";
-function App() {
+import { Toaster } from "react-hot-toast";
+
+export default function App() {
   const rpcString = useRecoilValue(rpcStringState);
 
   return (
     <BrowserRouter>
+      {/* toaster for transaction toasts */}
+      <Toaster position="bottom-right" />
       <ConnectionProvider endpoint={clusterApiUrl(rpcString)}>
         <WalletProvider wallets={[]} autoConnect>
           <WalletModalProvider>
@@ -67,5 +70,3 @@ function App() {
     </BrowserRouter>
   );
 }
-
-export default App;

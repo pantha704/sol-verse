@@ -56,7 +56,7 @@ const Airdrop = () => {
         />
         <p className="text-sm text-gray-500">Max 5 SOL at once</p>
         <button
-          className="text-white hover:text-gray-300 m-2 rounded-md"
+          className="text-white hover:text-gray-300 m-2 w-20 rounded-md"
           type="submit"
           onClick={() =>
             amount > 0
